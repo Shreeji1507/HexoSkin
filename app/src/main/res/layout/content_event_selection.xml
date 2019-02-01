@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".EventSelection"
+    tools:showIn="@layout/activity_event_selection">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="79dp"
+                android:background="@color/colorAccent">
+
+                <TextView
+                    android:id="@+id/txtSelectedCourse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="31dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="26dp"
+                    android:text="Selected Course:"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txtSelectedCourseDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="31dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="56dp"
+                    android:textColor="#000072"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="379dp"
+                android:background="@color/colorPrimary"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="262dp">
+
+                <TextView
+                    android:id="@+id/txtEventInfo"
+                    android:layout_width="286dp"
+                    android:layout_height="47dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="19dp"
+                    android:text="Select the event assosiated with the selected course:"
+                    android:textColor="@android:color/background_dark" />
+
+                <!--<Button-->
+                <!--android:id="@+id/btnConfirm"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:layout_alignParentStart="true"-->
+                <!--android:layout_marginBottom="58dp"-->
+                <!--android:text="Confirm" />-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/txtError"-->
+                <!--android:layout_width="238dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignEnd="@+id/txtEventInfo"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:layout_marginBottom="19dp"-->
+                <!--android:textColor="@android:color/holo_red_dark"-->
+                <!--android:textSize="18sp" />-->
+
+                <ToggleButton
+                    android:id="@+id/tbtnEvent3"
+                    android:layout_width="153dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="68dp"
+                    android:background="@android:color/darker_gray"
+                    android:text="ToggleButton" />
+
+                <ToggleButton
+                    android:id="@+id/tbtnEvent2"
+                    android:layout_width="153dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="150dp"
+                    android:background="@android:color/darker_gray"
+                    android:text="ToggleButton" />
+
+                <ToggleButton
+                    android:id="@+id/tbtnEvent1"
+                    android:layout_width="153dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="95dp"
+                    android:background="@android:color/darker_gray"
+                    android:text="ToggleButton" />
+
+                <ToggleButton
+                    android:id="@+id/toggleButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="35dp"
+                    android:text="ToggleButton" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">hexoskin-smart-android</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_device">DeviceActivity</string>
+    <string name="title_activity_course_selection">CourseSelection</string>
+
+    <string-array name="courses_array">
+        <item>Select one...</item>
+        <item>Course-1</item>
+        <item>Course-2</item>
+        <item>Course-3</item>
+
+    </string-array>
+
+    <string-array name="events_course_1">
+        <item>Select one...</item>
+        <item>Event-1-Course-1</item>
+        <item>Event-2-Course-1</item>
+        <item>Event-3-Course-1</item>
+
+    </string-array>
+
+    <string-array name="events_course_2">
+        <item>Select one...</item>
+        <item>Event-1-Course-2</item>
+        <item>Event-2-Course-2</item>
+        <item>Event-3-Course-2</item>
+
+    </string-array>
+    
+    <string-array name="events_course_3">
+        <item>Select one...</item>
+        <item>Event-1-Course-3</item>
+        <item>Event-2-Course-3</item>
+        <item>Event-3-Course-3</item>
+
+    </string-array>
+    <string name="title_activity_event_selection">EventSelection</string>
+
+</resources>
