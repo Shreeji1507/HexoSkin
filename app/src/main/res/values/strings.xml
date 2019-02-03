@@ -27,7 +27,7 @@
         <item>Event-3-Course-2</item>
 
     </string-array>
-    
+
     <string-array name="events_course_3">
         <item>Select one...</item>
         <item>Event-1-Course-3</item>
@@ -36,5 +36,6 @@
 
     </string-array>
     <string name="title_activity_event_selection">EventSelection</string>
+    <string name="title_activity_information_entry">InformationEntry</string>
 
 </resources>

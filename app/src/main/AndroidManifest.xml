@@ -33,6 +33,10 @@
         <activity
             android:name=".EventSelection"
             android:label="@string/title_activity_event_selection"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".InformationEntry"
+            android:label="@string/title_activity_information_entry"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
