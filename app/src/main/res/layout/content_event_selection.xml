@@ -50,7 +50,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="327dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/colorAccent"
                 tools:layout_editor_absoluteX="8dp"
                 tools:layout_editor_absoluteY="262dp">
 
@@ -61,7 +61,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="19dp"
-                    android:text="Select the event assosiated with the selected course:"
+                    android:text="Start the course by pressing the ON button and select the event:"
                     android:textColor="@android:color/background_dark" />
 
                 <!--<Button-->
@@ -90,7 +90,6 @@
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginBottom="26dp"
-                    android:background="@android:color/darker_gray"
                     android:text="ToggleButton" />
 
                 <ToggleButton
@@ -100,7 +99,6 @@
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginBottom="89dp"
-                    android:background="@android:color/darker_gray"
                     android:text="ToggleButton" />
 
                 <ToggleButton
@@ -110,7 +108,6 @@
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="125dp"
-                    android:background="@android:color/darker_gray"
                     android:text="ToggleButton" />
 
                 <ToggleButton

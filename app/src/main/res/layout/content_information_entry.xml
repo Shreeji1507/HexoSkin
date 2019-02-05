@@ -42,6 +42,7 @@
                     android:layout_alignStart="@+id/txtIdPrompt"
                     android:layout_marginBottom="141dp"
                     android:text="Last Name:"
+                    android:textColor="@android:color/background_dark"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -53,6 +54,7 @@
                     android:layout_alignStart="@+id/txtIdPrompt"
                     android:layout_marginTop="134dp"
                     android:text="First Name"
+                    android:textColor="@android:color/background_dark"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -65,18 +67,22 @@
                     android:layout_marginStart="43dp"
                     android:layout_marginTop="73dp"
                     android:text="GroupID"
+                    android:textColor="@android:color/background_dark"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/editTextGroupId"
                     android:layout_width="106dp"
-                    android:layout_height="36dp"
+                    android:layout_height="34dp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignTop="@+id/txtIdPrompt"
                     android:layout_marginEnd="87dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@android:color/background_light"
                     android:ems="10"
                     android:inputType="textPersonName"
+                    android:textColor="@android:color/background_dark"
                     android:textSize="18sp" />
 
                 <EditText
@@ -85,8 +91,10 @@
                     android:layout_height="36dp"
                     android:layout_alignStart="@+id/editTextGroupId"
                     android:layout_alignTop="@+id/txtFirstNamePrompt"
+                    android:background="@android:color/background_light"
                     android:ems="10"
                     android:inputType="textPersonName"
+                    android:textColor="@android:color/background_dark"
                     android:textSize="18sp" />
 
                 <EditText
@@ -95,8 +103,10 @@
                     android:layout_height="36dp"
                     android:layout_alignStart="@+id/editTextGroupId"
                     android:layout_alignTop="@+id/txtIdLastNamePrompt"
+                    android:background="@android:color/background_light"
                     android:ems="10"
                     android:inputType="textPersonName"
+                    android:textColor="@android:color/background_dark"
                     android:textSize="18sp" />
 
             </RelativeLayout>
