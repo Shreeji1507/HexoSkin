@@ -38,6 +38,7 @@ public class EventSelection extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,13 +48,6 @@ public class EventSelection extends AppCompatActivity {
             }
         });
 
-//        @Override
-//        protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//            super.onActivityResult(requestCode, resultCode, data);
-//            if (requestCode == RESULT_OK) {
-//                textViewObj.setText(data.getStringExtra("selected_course")) ;
-//            }
-//        }
         TextView selected_textview = (TextView) findViewById(R.id.txtSelectedCourseDisplay);
         String selected_course = getIntent().getStringExtra("selected_course").toString();
         selected_textview.setText(selected_course.toString());
@@ -85,6 +79,11 @@ public class EventSelection extends AppCompatActivity {
         final ToggleButton event2_toggle =  (ToggleButton) findViewById(R.id.tbtnEvent2);
         final ToggleButton event3_toggle =  (ToggleButton) findViewById(R.id.tbtnEvent3);
 
+        final ToggleButton start_course_toggle = (ToggleButton) findViewById(R.id.tbtnStartCourse);
+
+        event1_toggle.setEnabled(false);
+        event2_toggle.setEnabled(false);
+        event3_toggle.setEnabled(false);
 
         if (selected_course.toString().equals(courses[1].toString()))
         {
@@ -92,15 +91,6 @@ public class EventSelection extends AppCompatActivity {
                     ArrayAdapter.createFromResource(this, R.array.events_course_1,
                             android.R.layout.simple_spinner_item);
             setText(event1_toggle, event2_toggle, event3_toggle, events_adapter);
-//            event1_toggle.setText(events_adapter.getItem(1).toString());
-//            event1_toggle.setTextOff(events_adapter.getItem(1).toString());
-//            event1_toggle.setTextOn(events_adapter.getItem(1).toString());
-//            event2_toggle.setText(events_adapter.getItem(2).toString());
-//            event2_toggle.setTextOff(events_adapter.getItem(2).toString());
-//            event2_toggle.setTextOn(events_adapter.getItem(2).toString());
-//            event3_toggle.setText(events_adapter.getItem(3).toString());
-//            event3_toggle.setTextOff(events_adapter.getItem(3).toString());
-//            event3_toggle.setTextOn(events_adapter.getItem(3).toString());
         }
         else if (selected_course.toString().equals(courses[2].toString()))
         {
@@ -108,15 +98,7 @@ public class EventSelection extends AppCompatActivity {
                     ArrayAdapter.createFromResource(this, R.array.events_course_2,
                             android.R.layout.simple_spinner_item);
             setText(event1_toggle, event2_toggle, event3_toggle, events_adapter);
-//            event1_toggle.setText(events_adapter.getItem(1).toString());
-//            event1_toggle.setTextOff(events_adapter.getItem(1).toString());
-//            event1_toggle.setTextOn(events_adapter.getItem(1).toString());
-//            event2_toggle.setText(events_adapter.getItem(2).toString());
-//            event2_toggle.setTextOff(events_adapter.getItem(2).toString());
-//            event2_toggle.setTextOn(events_adapter.getItem(2).toString());
-//            event3_toggle.setText(events_adapter.getItem(3).toString());
-//            event3_toggle.setTextOff(events_adapter.getItem(3).toString());
-//            event3_toggle.setTextOn(events_adapter.getItem(3).toString());
+
         }
         else if (selected_course.toString().equals(courses[3].toString()))
         {
@@ -124,17 +106,30 @@ public class EventSelection extends AppCompatActivity {
                     ArrayAdapter.createFromResource(this, R.array.events_course_3,
                             android.R.layout.simple_spinner_item);
             setText(event1_toggle, event2_toggle, event3_toggle, events_adapter);
-//            event1_toggle.setText(events_adapter.getItem(1).toString());
-//            event1_toggle.setTextOff(events_adapter.getItem(1).toString());
-//            event1_toggle.setTextOn(events_adapter.getItem(1).toString());
-//            event2_toggle.setText(events_adapter.getItem(2).toString());
-//            event2_toggle.setTextOff(events_adapter.getItem(2).toString());
-//            event2_toggle.setTextOn(events_adapter.getItem(2).toString());
-//            event3_toggle.setText(events_adapter.getItem(3).toString());
-//            event3_toggle.setTextOff(events_adapter.getItem(3).toString());
-//            event3_toggle.setTextOn(events_adapter.getItem(3).toString());
         }
 
+
+
+
+        start_course_toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if (isChecked) {
+                    enableButtons(event1_toggle, event2_toggle, event3_toggle);
+//                    event1_toggle.setEnabled(true);
+//                    event2_toggle.setEnabled(true);
+//                    event3_toggle.setEnabled(true);
+                    updateTime();
+                }
+                else{
+                    disableButtons(event1_toggle, event2_toggle, event3_toggle);
+//                    event1_toggle.setEnabled(false);
+//                    event2_toggle.setEnabled(false);
+//                    event3_toggle.setEnabled(false);
+                    updateTime();
+                }
+            }
+        });
 
         /**
          * on checked event for first event toggle button
@@ -146,12 +141,17 @@ public class EventSelection extends AppCompatActivity {
 
                 if (isChecked) {
 
-                    event2_toggle.setEnabled(false);
-                    event3_toggle.setEnabled(false);
+                    disableButtons(event2_toggle, event3_toggle, start_course_toggle);
+//                    event2_toggle.setEnabled(false);
+//                    event3_toggle.setEnabled(false);
+//                    start_course_toggle.setEnabled(false);
                     updateTime();
                 } else {
-                    event2_toggle.setEnabled(true);
-                    event3_toggle.setEnabled(true);
+
+                    enableButtons(event2_toggle, event3_toggle, start_course_toggle);
+//                    event2_toggle.setEnabled(true);
+//                    event3_toggle.setEnabled(true);
+//                    start_course_toggle.setEnabled(true);
                     updateTime();
 
                 }
@@ -167,12 +167,16 @@ public class EventSelection extends AppCompatActivity {
         event2_toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    event1_toggle.setEnabled(false);
-                    event3_toggle.setEnabled(false);
+                    disableButtons(event1_toggle, event3_toggle, start_course_toggle);
+//                    event1_toggle.setEnabled(false);
+//                    event3_toggle.setEnabled(false);
+//                    start_course_toggle.setEnabled(false);
                     updateTime();
                 } else {
-                    event1_toggle.setEnabled(true);
-                    event3_toggle.setEnabled(true);
+                    enableButtons(event1_toggle, event3_toggle, start_course_toggle);
+//                    event1_toggle.setEnabled(true);
+//                    event3_toggle.setEnabled(true);
+//                    start_course_toggle.setEnabled(true);
                     updateTime();
                 }
 
@@ -187,17 +191,33 @@ public class EventSelection extends AppCompatActivity {
         event3_toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    event1_toggle.setEnabled(false);
-                    event2_toggle.setEnabled(false);
+                    disableButtons(event1_toggle, event2_toggle, start_course_toggle);
+//                    event1_toggle.setEnabled(false);
+//                    event2_toggle.setEnabled(false);
+//                    start_course_toggle.setEnabled(false);
                     updateTime();
                 } else {
-                    event1_toggle.setEnabled(true);
-                    event2_toggle.setEnabled(true);
+                    enableButtons(event1_toggle, event2_toggle, start_course_toggle);
+//                    event1_toggle.setEnabled(true);
+//                    event2_toggle.setEnabled(true);
+//                    start_course_toggle.setEnabled(true);
                     updateTime();
                 }
             }
         });
 
+    }
+
+    public void disableButtons(Button button1, Button button2, Button button3){
+        button1.setEnabled(false);
+        button2.setEnabled(false);
+        button3.setEnabled(false);
+    }
+
+    public void enableButtons(Button button1, Button button2, Button button3){
+        button1.setEnabled(true);
+        button2.setEnabled(true);
+        button3.setEnabled(true);
     }
 
     /**
@@ -228,8 +248,6 @@ public class EventSelection extends AppCompatActivity {
      */
     public void setText(ToggleButton toggleButton1, ToggleButton toggleButton2,
                         ToggleButton toggleButton3, ArrayAdapter arrayAdapter){
-
-
         toggleButton1.setText(arrayAdapter.getItem(1).toString());
         toggleButton1.setTextOff(arrayAdapter.getItem(1).toString());
         toggleButton1.setTextOn(arrayAdapter.getItem(1).toString());
@@ -239,9 +257,6 @@ public class EventSelection extends AppCompatActivity {
         toggleButton3.setText(arrayAdapter.getItem(3).toString());
         toggleButton3.setTextOff(arrayAdapter.getItem(3).toString());
         toggleButton3.setTextOn(arrayAdapter.getItem(3).toString());
-
-
-
     }
 
 }

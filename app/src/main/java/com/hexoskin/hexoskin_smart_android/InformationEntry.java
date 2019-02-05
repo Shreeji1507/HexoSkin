@@ -21,6 +21,7 @@ public class InformationEntry extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,10 +38,13 @@ public class InformationEntry extends AppCompatActivity {
         final EditText first_name_input = (EditText) findViewById(R.id.editTextFirstName);
         final EditText last_name_input = (EditText) findViewById(R.id.editTextLastName);
 
+
+        /**
+         * when the text for group id is changed on the input box, enable/disable the button
+         */
         group_id_input.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             @Override
@@ -54,6 +58,9 @@ public class InformationEntry extends AppCompatActivity {
             }
         });
 
+        /**
+         * when the text for first name is changed on the input box, enable/disable the button
+         */
         first_name_input.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -71,6 +78,9 @@ public class InformationEntry extends AppCompatActivity {
             }
         });
 
+        /**
+         * when the text for last name is changed on the input box, enable/disable the button
+         */
         last_name_input.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -88,6 +98,9 @@ public class InformationEntry extends AppCompatActivity {
             }
         });
 
+        /**
+         * goes to the next screen, passing the data from the last screen for selected course
+         */
         event_selection_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,7 +112,8 @@ public class InformationEntry extends AppCompatActivity {
         });
     }
 
-    /**
+    /** MORE VALIDATION IS TO BE DONE AFTER FOR GROUP ID AND .....
+     *
      * a function that is used to decide if something is entered in the input
      * text-box and enables the button only if all the input boxes are not empty
      * @param editText1 : input text box 1
@@ -111,6 +125,7 @@ public class InformationEntry extends AppCompatActivity {
                              Button button){
 
         if (editText1.getText().toString().length() > 0 &&
+                editText1.getText().toString().matches("\\d+(?:\\.\\d+)?") &&
                 editText2.getText().toString().length() > 0 &&
                 editText3.getText().toString().length() > 0)
         {
