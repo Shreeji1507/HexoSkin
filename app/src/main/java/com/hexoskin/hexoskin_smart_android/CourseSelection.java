@@ -52,7 +52,7 @@ public class CourseSelection extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         courses_spinner.setAdapter(adapter);
-        final Button event_selection_button = (Button) findViewById(R.id.btnEventSelection);
+        final Button info_entry_button = (Button) findViewById(R.id.btnInfoEntry);
 
         courses_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -63,10 +63,10 @@ public class CourseSelection extends AppCompatActivity {
                 TextView status_textview = (TextView) findViewById(R.id.txtStatus);
                 if (position == 0) {
                     status_textview.setText("Please select one course!");
-                    event_selection_button.setEnabled(false);
+                    info_entry_button.setEnabled(false);
                 }else {
                     status_textview.setText("You selected: '" + selected_course + "'");
-                    event_selection_button.setEnabled(true);
+                    info_entry_button.setEnabled(true);
                 }
 
             }
@@ -122,14 +122,23 @@ public class CourseSelection extends AppCompatActivity {
 //            }
 //        });
 
-        event_selection_button.setOnClickListener(new View.OnClickListener() {
+//        event_selection_button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//                public void onClick(View v) {
+//                Intent i = new Intent(CourseSelection.this, EventSelection.class);
+//                i.putExtra("selected_course", courses_spinner.getSelectedItem().toString());
+//                //i.putExtra( "adapter", adapter.toString());
+//                startActivity(i);
+//                //startActivity(new Intent(CourseSelection.this, EventSelection.class));
+//            }
+//        });
+
+        info_entry_button.setOnClickListener(new View.OnClickListener() {
             @Override
-                public void onClick(View v) {
-                Intent i = new Intent(CourseSelection.this, EventSelection.class);
+            public void onClick(View v) {
+                Intent i = new Intent(CourseSelection.this, InformationEntry.class);
                 i.putExtra("selected_course", courses_spinner.getSelectedItem().toString());
-                //i.putExtra( "adapter", adapter.toString());
                 startActivity(i);
-                //startActivity(new Intent(CourseSelection.this, EventSelection.class));
             }
         });
 

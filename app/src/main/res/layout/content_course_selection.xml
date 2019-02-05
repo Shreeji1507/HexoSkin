@@ -68,7 +68,7 @@
                     android:textSize="20sp" />
 
                 <Button
-                    android:id="@+id/btnEventSelection"
+                    android:id="@+id/btnInfoEntry"
                     android:layout_width="176dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
